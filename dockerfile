@@ -14,14 +14,15 @@ RUN yarn global add @angular/cli@latest
 # RUN npm install @angular/cli@latest -g
 
 # install packages
-# RUN yarn add
 RUN yarn install
 
-#for npm
+# FOR NPM
 # npm install
 
 # SET ENVIRONMENT VARIABLES
-ENV environment=production
+ENV ENVIRONMENT=production1
+ENV SomeAPIKey="This is not an API Key"
+ENV SomeOtherAPIKey="This is not another API Key"
 
 # Build Angular Application in Production
 RUN ng build --prod
@@ -34,6 +35,7 @@ FROM nginx:alpine
 VOLUME  /var/cache/nginx
 
 # Copy the build files from the project
+# replace "angular-docker-environment-variables" with your angular project name
 COPY --from=builder /app/dist/angular-docker-environment-variables /usr/share/nginx/html
 
 # Copy Nginx Files
