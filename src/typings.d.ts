@@ -5,7 +5,3 @@ interface Env {
   SomeAPIKey: string;
   SomeOtherAPIKey: string;
 }
-
-interface GlobalEnvironment {
-  $ENV: Env;
-}
