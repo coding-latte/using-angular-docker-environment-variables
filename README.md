@@ -1,6 +1,6 @@
-## How to pass OS Environment Variables to an Angular App
+## Using OS Environment Variables in Angular (with Docker)
 
-This is demo, to show you how you can pass configuration through Docker OS Environment Variables to your angular application during build.
+This is demo, to show you how you can pass configuration through OS Environment Variables to your angular application during build.
 
 To run this demo,
 
