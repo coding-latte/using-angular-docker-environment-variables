@@ -13,4 +13,4 @@ To run this demo,
 3. And finally run the image you just built:
    `docker build --rm -f "dockerfile" -t angular-docker-environment-variables:latest .`
 
-You can learn more about this (here)[https://codinglatte.com/posts/angular/using-os-environment-variables-in-angular-with-docker/]
+You can learn more about this [here](https://codinglatte.com/posts/angular/using-os-environment-variables-in-angular-with-docker/)
