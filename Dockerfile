@@ -1,6 +1,6 @@
 ##### Stage 1
 
-FROM node:10.15.0 as builder
+FROM node:14.17 as builder
 
 WORKDIR /app
 
@@ -24,13 +24,24 @@ ENV ENVIRONMENT=production1
 ENV SomeAPIKey="This is not an API Key"
 ENV SomeOtherAPIKey="This is not another API Key"
 
+#ARG ENVIRONMENT
+#ENV ENVIRONMENT=$ENVIRONMENT
+#
+#ARG SomeAPIKey
+#ENV SomeAPIKey=$SomeAPIKey
+#
+#ARG SomeOtherAPIKey
+#ENV SomeOtherAPIKey=$SomeOtherAPIKey
+
+#RUN echo "Environment: ${ENVIRONMENT}  SomeAPIKey: ${SomeAPIKey}  SomeOtherAPIKey: ${SomeOtherAPIKey}"
+
 # Build Angular Application in Production
 RUN ng build --prod
 
 #### STAGE 2
 #### Deploying the application
 
-FROM nginx:alpine
+FROM nginx
 
 VOLUME  /var/cache/nginx
 

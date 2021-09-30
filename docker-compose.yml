@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  angular-docker:
+    image: using-angular-docker-environment-variables:latest
+    container_name: angular-docker
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      ENVIRONMENT: "blah blah"
+      SomeAPIKey: "This is not an API Key"
+      SomeOtherAPIKey: "This is not another API Key"
+    ports:
+      - "8085:80"
